@@ -5,9 +5,10 @@ using UnityEngine;
 public class Edibles : MonoBehaviour
 {
     public bool isMakingBig;
-    public int size=10;
+    public float size=10;
+    public float baseGrowthFactor = 0.1f;
     private void Start()
     {
-        transform.localScale = Mathf.Log10(size)*Vector3.one;
+        transform.localScale = baseGrowthFactor* size*Vector3.one;
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerSizeControl : MonoBehaviour
 {
-    public int size;
+    public float size;
     public float baseGrowthFactor = 0.1f; 
     private void OnCollisionEnter(Collision collision)
     {
@@ -18,16 +18,16 @@ public class PlayerSizeControl : MonoBehaviour
             }
         }
     }
-    public void TunePlayerSize(int objectSize, bool isMakingBig)
+    public void TunePlayerSize(float objectSize, bool isMakingBig)
     {
         if (isMakingBig)
         {
-            transform.localScale += Vector3.one * baseGrowthFactor*objectSize;
+            transform.localScale += Vector3.one * baseGrowthFactor * objectSize; 
             size += objectSize;
         }
         else if (!isMakingBig)
         {
-            transform.localScale -= Vector3.one * baseGrowthFactor * objectSize;
+            transform.localScale -= Vector3.one *baseGrowthFactor * objectSize;
             size -= objectSize;
         }
         

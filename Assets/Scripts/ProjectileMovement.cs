@@ -5,10 +5,10 @@ using UnityEngine;
 public class ProjectileMovement : MonoBehaviour
 {
     [SerializeField] float Velocity;
-    [SerializeField] Transform player;
     // Start is called before the first frame update
     void Start()
     {
+        Transform player = GameObject.Find("Player").GetComponent<Transform>();
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.velocity = (player.position - this.transform.position).normalized * Velocity;
     }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class ProjectileSpawner : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class ProjectileSpawner : MonoBehaviour
     [SerializeField] Transform player;
     [SerializeField] GameObject projectile;
     [SerializeField] float spawnCooldown = 3f;
+    float playerSize;
     float distance;
     Vector3 leftBottomCorner;
     Vector3 rightTopCorner;
@@ -16,10 +18,19 @@ public class ProjectileSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player= GameObject.Find("Player").GetComponent<Transform>();
         distance = player.position.z - mainCamera.transform.position.z;
         leftBottomCorner = mainCamera.ViewportToWorldPoint(new Vector3(0, 0, distance));
         rightTopCorner = mainCamera.ViewportToWorldPoint(new Vector3(1, 1, distance));
         StartCoroutine(SpawnCoroutine());
+    }
+    private void Update()
+    {
+
+        leftBottomCorner = mainCamera.ViewportToWorldPoint(new Vector3(0, 0, distance));
+        rightTopCorner = mainCamera.ViewportToWorldPoint(new Vector3(1, 1, distance));
+        
+
     }
 
 
@@ -47,17 +58,31 @@ public class ProjectileSpawner : MonoBehaviour
         return location;
     }
 
-    void Spawn(int size=10)
+    void Spawn(float size=10)
     {
         GameObject spawned = Instantiate(projectile, LocationGenerator(), Quaternion.identity);
         spawned.GetComponent<Edibles>().size = size;
+        if (Random.Range(0f, 1f) <= 0.8f)
+        {
+            spawned.GetComponent<Edibles>().isMakingBig=true;
+        }
+        else 
+        {
+            spawned.GetComponent<Edibles>().isMakingBig = false;
+        }
+        
     }
     IEnumerator SpawnCoroutine()
     {
         while (true)
         {
             yield return new WaitForSeconds(spawnCooldown);
-            Spawn(Random.Range(player.gameObject.GetComponent<PlayerSizeControl>().size/2, player.gameObject.GetComponent<PlayerSizeControl>().size));
+
+            playerSize = player.gameObject.GetComponent<PlayerSizeControl>().size;
+            float spawnSize= Random.Range(playerSize / 2, playerSize);
+            Spawn(spawnSize);
+            
+              
         }
     }
 }
