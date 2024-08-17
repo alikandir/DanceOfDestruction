@@ -16,7 +16,7 @@ public class ProjectileSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        distance = player.position.y - mainCamera.transform.position.y;
+        distance = player.position.z - mainCamera.transform.position.z;
         leftBottomCorner = mainCamera.ViewportToWorldPoint(new Vector3(0, 0, distance));
         rightTopCorner = mainCamera.ViewportToWorldPoint(new Vector3(1, 1, distance));
         StartCoroutine(SpawnCoroutine());
@@ -29,19 +29,19 @@ public class ProjectileSpawner : MonoBehaviour
         int side = Random.Range(0, 4); //0 is left 1 is top 2 is right 3 is bottom
         if (side == 0)
         {
-            location = new Vector3(leftBottomCorner.x, player.position.y, Random.Range(leftBottomCorner.z,rightTopCorner.z));
+            location = new Vector3(leftBottomCorner.x, Random.Range(leftBottomCorner.y,rightTopCorner.y) , player.position.z);
         }
         else if (side == 1)
         {
-            location = new Vector3(Random.Range(leftBottomCorner.x, rightTopCorner.x), player.position.y,rightTopCorner.z);
+            location = new Vector3(Random.Range(leftBottomCorner.x, rightTopCorner.x), rightTopCorner.y, player.position.z);
         }
         else if(side == 2)
         {
-            location = new Vector3(rightTopCorner.x, player.position.y, Random.Range(leftBottomCorner.z, rightTopCorner.z));
+            location = new Vector3(rightTopCorner.x, Random.Range(leftBottomCorner.y, rightTopCorner.y) , player.position.z);
         }
         else if(side == 3)
         {
-            location = new Vector3(Random.Range(leftBottomCorner.x, rightTopCorner.x), player.position.y,leftBottomCorner.z );
+            location = new Vector3(Random.Range(leftBottomCorner.x, rightTopCorner.x),leftBottomCorner.y ,player.position.z );
         }
 
         return location;
