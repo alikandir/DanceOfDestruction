@@ -1,0 +1,62 @@
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEngine;
+
+public class ProjectileSpawner : MonoBehaviour
+{
+    [SerializeField] Camera mainCamera;
+    [SerializeField] Transform player;
+    [SerializeField] GameObject projectile;
+    [SerializeField] float spawnCooldown = 3f;
+    float distance;
+    Vector3 leftBottomCorner;
+    Vector3 rightTopCorner;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        distance = player.position.y - mainCamera.transform.position.y;
+        leftBottomCorner = mainCamera.ViewportToWorldPoint(new Vector3(0, 0, distance));
+        rightTopCorner = mainCamera.ViewportToWorldPoint(new Vector3(1, 1, distance));
+        StartCoroutine(SpawnCoroutine());
+    }
+
+
+    Vector3 LocationGenerator()
+    {
+        Vector3 location = Vector3.zero;
+        int side = Random.Range(0, 4); //0 is left 1 is top 2 is right 3 is bottom
+        if (side == 0)
+        {
+            location = new Vector3(leftBottomCorner.x, player.position.y, Random.Range(leftBottomCorner.z,rightTopCorner.z));
+        }
+        else if (side == 1)
+        {
+            location = new Vector3(Random.Range(leftBottomCorner.x, rightTopCorner.x), player.position.y,rightTopCorner.z);
+        }
+        else if(side == 2)
+        {
+            location = new Vector3(rightTopCorner.x, player.position.y, Random.Range(leftBottomCorner.z, rightTopCorner.z));
+        }
+        else if(side == 3)
+        {
+            location = new Vector3(Random.Range(leftBottomCorner.x, rightTopCorner.x), player.position.y,leftBottomCorner.z );
+        }
+
+        return location;
+    }
+
+    void Spawn()
+    {
+        Instantiate(projectile, LocationGenerator(), Quaternion.identity);
+    }
+    IEnumerator SpawnCoroutine()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(spawnCooldown);
+            Spawn();
+        }
+    }
+}
