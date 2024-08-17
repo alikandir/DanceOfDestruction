@@ -47,16 +47,17 @@ public class ProjectileSpawner : MonoBehaviour
         return location;
     }
 
-    void Spawn()
+    void Spawn(int size=10)
     {
-        Instantiate(projectile, LocationGenerator(), Quaternion.identity);
+        GameObject spawned = Instantiate(projectile, LocationGenerator(), Quaternion.identity);
+        spawned.GetComponent<Edibles>().size = size;
     }
     IEnumerator SpawnCoroutine()
     {
         while (true)
         {
             yield return new WaitForSeconds(spawnCooldown);
-            Spawn();
+            Spawn(Random.Range(player.gameObject.GetComponent<PlayerSizeControl>().size/2, player.gameObject.GetComponent<PlayerSizeControl>().size));
         }
     }
 }
