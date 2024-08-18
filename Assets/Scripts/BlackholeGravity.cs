@@ -24,5 +24,12 @@ public class BlackholeGravity : MonoBehaviour
                 rb.AddForce(directionToBlackHole * gravityStrength * Time.fixedDeltaTime, ForceMode.Acceleration);
             }
         }
+        
+    }
+    void OnDrawGizmosSelected()
+    {
+        // Visualize the gravity radius in the editor
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, gravityRadius);
     }
 }
