@@ -26,7 +26,7 @@ public class ProjectileSpawner : MonoBehaviour
     }
     private void Update()
     {
-
+        distance = player.position.z - mainCamera.transform.position.z;
         leftBottomCorner = mainCamera.ViewportToWorldPoint(new Vector3(0, 0, distance));
         rightTopCorner = mainCamera.ViewportToWorldPoint(new Vector3(1, 1, distance));
         
@@ -80,6 +80,7 @@ public class ProjectileSpawner : MonoBehaviour
 
             playerSize = player.gameObject.GetComponent<PlayerSizeControl>().size;
             float spawnSize= SizeGenerator();
+            Debug.Log(spawnSize);
             Spawn(spawnSize);
             
               
@@ -91,9 +92,9 @@ public class ProjectileSpawner : MonoBehaviour
         int rand = Random.Range(0, 100);
         if (rand >= 95)
             return Random.Range(playerSize / 6, playerSize / 4);
-        else if (rand >= 65)
-            return Random.Range(playerSize / 10, playerSize / 6);
+        else if (rand >= 75)
+            return Random.Range(playerSize / 8, playerSize / 6);
         else
-            return Random.Range(playerSize / 20, playerSize / 10);
+            return Random.Range(playerSize / 20, playerSize / 8);
     }
 }
