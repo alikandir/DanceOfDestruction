@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,9 @@ using UnityEngine;
 public class PlayerSizeControl : MonoBehaviour
 {
     public float size;
-    public float baseGrowthFactor = 0.1f; 
+    public float baseGrowthFactor = 0.1f;
+
+    public event Action<float> OnEat; //passes the player size
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.GetComponent<Edibles>() != null) 
@@ -15,6 +18,7 @@ public class PlayerSizeControl : MonoBehaviour
             {
                 TunePlayerSize(edible.size,edible.isMakingBig);
                 Destroy(edible.gameObject);
+                OnEat?.Invoke(size);
             }
         }
     }
