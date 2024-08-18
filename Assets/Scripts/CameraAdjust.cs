@@ -15,7 +15,7 @@ public class CameraAdjust : MonoBehaviour
     private void Awake()
     {
         playerSizeControl=gameObject.GetComponent<PlayerSizeControl>();
-        _playerSizeThreshhold = playerSizeControl.size;
+        _playerSizeThreshhold = this.gameObject.transform.localScale.x*1.5f;
         _followOffset = cinemachineCam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset;
     }
 
@@ -30,22 +30,19 @@ public class CameraAdjust : MonoBehaviour
     }
     void HandleBlackHoleGrowth(float playerSize)
     {
-        if (playerSize > _playerSizeThreshhold * 2)
+        if ( this.gameObject.transform.localScale.x> _playerSizeThreshhold * 2)
         {
             
             DOTween.To(() => cinemachineCam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset, x => cinemachineCam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset = x,_followOffset*2, 3);
             _followOffset *= 2;
-            _playerSizeThreshhold = playerSize;
+            _playerSizeThreshhold = this.gameObject.transform.localScale.x;
         }
-        else if (playerSize < _playerSizeThreshhold / 2)
+        else if (this.gameObject.transform.localScale.x < _playerSizeThreshhold / 2)
         {
             DOTween.To(() => cinemachineCam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset, x => cinemachineCam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset = x, _followOffset/2, 3);
             _followOffset /= 2;
-            _playerSizeThreshhold = playerSize;
+            _playerSizeThreshhold = this.gameObject.transform.localScale.x;
         }
     }
-    private void Update()
-    {
-        
-    }
+    
 }
