@@ -605,21 +605,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d2c37d452e02904eb5563a2ba681259, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityStrength: 10
-  gravityRadius: 2.73
---- !u!114 &824350673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 585266854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c555ce55708b9744cabc8ca67d62ad9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cinemachineCam: {fileID: 665037788}
+  gravityStrength: 30.4
+  gravityRadius: 5.71
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,10 +5,11 @@ using UnityEngine;
 public class BlackholeGravity : MonoBehaviour
 {
     public float gravityStrength = 10f; // The strength of the gravitational pull
-    public float gravityRadius = 5f;    // The radius within which objects are affected by the gravity
+    public float gravityRadius = 3f;    // The radius within which objects are affected by the gravity
 
     void FixedUpdate()
     {
+        gravityRadius = transform.localScale.x;
         // Find all colliders within the gravity radius
         Collider[] objectsInRange = Physics.OverlapSphere(transform.position, gravityRadius);
 
