@@ -21,14 +21,20 @@ public class PlayerSizeControl : MonoBehaviour
     public void TunePlayerSize(float objectSize, bool isMakingBig)
     {
         if (isMakingBig)
-        {
+        {/*
             transform.localScale += Vector3.one * baseGrowthFactor * objectSize; 
             size += objectSize;
+            */
+            size += objectSize;
+            transform.localScale = Vector3.one * Mathf.Pow(size, 1f / 3f);
         }
         else if (!isMakingBig)
-        {
+        {/*
             transform.localScale -= Vector3.one *baseGrowthFactor * objectSize;
             size -= objectSize;
+            */
+            size -= objectSize;
+            transform.localScale = Vector3.one * Mathf.Pow(size,1f/3f);
         }
         
     }

@@ -79,10 +79,21 @@ public class ProjectileSpawner : MonoBehaviour
             yield return new WaitForSeconds(spawnCooldown);
 
             playerSize = player.gameObject.GetComponent<PlayerSizeControl>().size;
-            float spawnSize= Random.Range(playerSize / 2, playerSize);
+            float spawnSize= SizeGenerator();
             Spawn(spawnSize);
             
               
         }
+    }
+
+    float SizeGenerator()
+    {
+        int rand = Random.Range(0, 100);
+        if (rand >= 95)
+            return Random.Range(playerSize / 6, playerSize / 4);
+        else if (rand >= 65)
+            return Random.Range(playerSize / 10, playerSize / 6);
+        else
+            return Random.Range(playerSize / 20, playerSize / 10);
     }
 }
