@@ -10,6 +10,7 @@ public class ProjectileSpawner : MonoBehaviour
     [SerializeField] Transform player;
     [SerializeField] GameObject projectile;
     [SerializeField] float spawnCooldown = 3f;
+    public float projectileSpeed = 5f;
     float playerSize;
     float distance;
     Vector3 leftBottomCorner;
@@ -58,10 +59,11 @@ public class ProjectileSpawner : MonoBehaviour
         return location;
     }
 
-    void Spawn(float size=10)
+    void Spawn(float size=10f, float velocity=10f)
     {
         GameObject spawned = Instantiate(projectile, LocationGenerator(), Quaternion.identity);
         spawned.GetComponent<Edibles>().size = size;
+        spawned.GetComponent<ProjectileMovement>().Velocity = velocity; 
         if (Random.Range(0f, 1f) <= 0.8f)
         {
             spawned.GetComponent<Edibles>().isMakingBig=true;
@@ -79,9 +81,8 @@ public class ProjectileSpawner : MonoBehaviour
             yield return new WaitForSeconds(spawnCooldown);
 
             playerSize = player.gameObject.GetComponent<PlayerSizeControl>().size;
-            float spawnSize= SizeGenerator();
-            Debug.Log(spawnSize);
-            Spawn(spawnSize);
+            float spawnSize = SizeGenerator();
+            Spawn(spawnSize,projectileSpeed);
             
               
         }
