@@ -400,11 +400,13 @@ MonoBehaviour:
     orbitDistance: 13
     orbitSpeed: 50
     rotationSpeed: 29.46
+    planetObject: {fileID: 0}
   - planetPrefab: {fileID: 6653376476229151936, guid: 6a9c1dc27511fd049a3ceaaefb43a3b5,
       type: 3}
     orbitDistance: 26
     orbitSpeed: 25
     rotationSpeed: 29.46
+    planetObject: {fileID: 0}
 --- !u!4 &297840707 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7756948365235328997, guid: 8c115998bae61b744b1c1429eaaf3345,
@@ -441,6 +443,7 @@ MonoBehaviour:
     orbitDistance: 11
     orbitSpeed: 19
     rotationSpeed: 12
+    planetObject: {fileID: 0}
 --- !u!1 &361923747 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8766274510978474482, guid: 8c115998bae61b744b1c1429eaaf3345,
@@ -471,11 +474,13 @@ MonoBehaviour:
     orbitDistance: 5
     orbitSpeed: 10
     rotationSpeed: 5
+    planetObject: {fileID: 0}
   - planetPrefab: {fileID: 6806577716708123288, guid: 9768dd6bf6679324d8f22962376a8c6a,
       type: 3}
     orbitDistance: 15
     orbitSpeed: 20
     rotationSpeed: 5
+    planetObject: {fileID: 0}
 --- !u!1001 &405732735
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -723,16 +728,19 @@ MonoBehaviour:
     orbitDistance: 30
     orbitSpeed: 10
     rotationSpeed: 12
+    planetObject: {fileID: 0}
   - planetPrefab: {fileID: 3428639906516868979, guid: 4b303121d08851e489500ebd0e724a99,
       type: 3}
     orbitDistance: 20
     orbitSpeed: 30
     rotationSpeed: 12
+    planetObject: {fileID: 0}
   - planetPrefab: {fileID: 3193031571723178059, guid: 7e82a3661fc13aa4d83970f3ac2a97ca,
       type: 3}
     orbitDistance: 10
     orbitSpeed: 35
     rotationSpeed: 12
+    planetObject: {fileID: 0}
 --- !u!1 &533480466
 GameObject:
   m_ObjectHideFlags: 0
@@ -1672,6 +1680,7 @@ MonoBehaviour:
     orbitDistance: 13
     orbitSpeed: 50
     rotationSpeed: 20
+    planetObject: {fileID: 0}
 --- !u!1 &1232548737
 GameObject:
   m_ObjectHideFlags: 0
@@ -2776,6 +2785,7 @@ MonoBehaviour:
     orbitDistance: 10
     orbitSpeed: 23
     rotationSpeed: 10
+    planetObject: {fileID: 0}
 --- !u!1 &1831290486
 GameObject:
   m_ObjectHideFlags: 0
