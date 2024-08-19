@@ -9,6 +9,7 @@ public class Edibles : MonoBehaviour
     public float baseGrowthFactor = 0.1f;
     private void Start()
     {
-        transform.localScale = Vector3.one * Mathf.Pow(size, 1f / 3f);
+        
+        transform.localScale =Mathf.Pow(size, 1f / 3f) * transform.localScale;
     }
 }
