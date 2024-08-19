@@ -3162,7 +3162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planets:
-  - planetPrefab: {fileID: 9122811119807089266, guid: 161e5664cb5a29449a73e1fe45dae09b,
+  - planetPrefab: {fileID: 2665722452753363235, guid: 95a580189a2661e4da3ec4402ca87ab5,
       type: 3}
     orbitDistance: 10
     orbitSpeed: 23
