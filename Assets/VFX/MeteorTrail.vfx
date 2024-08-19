@@ -19,8 +19,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 703
     y: -367
-    width: 1821
-    height: 2136
+    width: 1819
+    height: 2101
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2908,7 +2908,7 @@ MonoBehaviour:
   AlphaComposition: 2
   SampleMode: 0
   Mode: 1
-  ColorMode: 3
+  ColorMode: 1
   channels: 6
 --- !u!114 &8926484042661614683
 MonoBehaviour:
