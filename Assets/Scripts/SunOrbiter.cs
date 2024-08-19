@@ -11,6 +11,7 @@ public class SunOrbiter : MonoBehaviour
         public float orbitDistance;      // Distance from the sun
         public float orbitSpeed;         // Speed of orbit around the sun
         public float rotationSpeed;      // Speed of planet's own rotation
+        [HideInInspector] public GameObject planetObject; // Reference to the instantiated planet
     }
 
     public List<Planet> planets = new List<Planet>();  // List of planets to be initialized
@@ -21,8 +22,8 @@ public class SunOrbiter : MonoBehaviour
         {
             // Spawn the planet at the correct orbit distance
             Vector3 spawnPosition = transform.position + new Vector3(planet.orbitDistance, 0, 0);
-            GameObject planetObject = Instantiate(planet.planetPrefab, spawnPosition, Quaternion.identity);
-            planetObject.transform.parent = transform;  // Make the planet a child of the sun for easier management
+            planet.planetObject = Instantiate(planet.planetPrefab, spawnPosition, Quaternion.identity);
+            planet.planetObject.transform.parent = transform;  // Make the planet a child of the sun for easier management
         }
     }
 
@@ -30,15 +31,14 @@ public class SunOrbiter : MonoBehaviour
     {
         foreach (Planet planet in planets)
         {
-            GameObject planetObject = transform.Find(planet.planetPrefab.name + "(Clone)").gameObject;
-
-            if (planetObject != null)
+            // Check if the planet still exists
+            if (planet.planetObject != null)
             {
                 // Rotate the planet around the sun
-                planetObject.transform.RotateAround(transform.position, Vector3.forward, planet.orbitSpeed * Time.deltaTime);
+                planet.planetObject.transform.RotateAround(transform.position, Vector3.forward, planet.orbitSpeed * Time.deltaTime);
 
                 // Rotate the planet around its own axis
-                planetObject.transform.Rotate(Vector3.up, planet.rotationSpeed * Time.deltaTime);
+                planet.planetObject.transform.Rotate(Vector3.up, planet.rotationSpeed * Time.deltaTime);
             }
         }
     }

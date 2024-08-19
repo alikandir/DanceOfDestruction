@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 4273061715603525149}
   - component: {fileID: 1516761082226789118}
   - component: {fileID: 6333238057078353138}
+  - component: {fileID: 6408615274849450914}
+  - component: {fileID: -3620841165663705526}
+  - component: {fileID: 8667541103592774685}
   m_Layer: 0
   m_Name: BurakIcePlanet
   m_TagString: Untagged
@@ -85,3 +88,54 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6408615274849450914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3428639906516868979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ad9924173b9aba41a9b15f551cded94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMakingBig: 1
+  size: 10
+  baseGrowthFactor: 0.1
+--- !u!135 &-3620841165663705526
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3428639906516868979}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.009768236
+  m_Center: {x: 0.00013847277, y: 0.000031535514, z: -0.00023529213}
+--- !u!114 &8667541103592774685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3428639906516868979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73a3c9d691118f42b0012a5dd2c10db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetSize: 11
+  flavorText: 
+  taskText: 

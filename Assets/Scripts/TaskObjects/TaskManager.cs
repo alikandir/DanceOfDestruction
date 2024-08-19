@@ -42,6 +42,8 @@ public class TaskManager : MonoBehaviour
         if (timer.TimeOut && !isTaskGiven)
         {
             GiveTask();
+            isTaskGiven = true; // Ensure this is set immediately after giving a task
+            Debug.Log("Task Given: " + isTaskGiven);
         }
         else if (isTaskGiven && taskTimer.TimeOut)
         {
@@ -101,15 +103,17 @@ public class TaskManager : MonoBehaviour
         Spawn(SupremeTaskSelector(), size, LocationGenerator());
         spawned.GetComponent<TaskObjectsBase>().targetSize = size;
         spawned.GetComponent<Edibles>().size = size;
-        taskTextUI.text = spawned.GetComponent<TaskObjectsBase>().taskText;
-        taskTimer.StartTimer();
+        //taskTextUI.text = spawned.GetComponent<TaskObjectsBase>().taskText;
         isTaskGiven = true;
+        taskTimer.StartTimer();
+        
     }
 
     public void TaskComplete()
     {
         isTaskGiven = false;
         timer.StartTimer();
+        Debug.Log("Task Completed");
     }
 
     public void TaskFailed()
