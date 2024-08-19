@@ -19,7 +19,7 @@ public class TaskManager : MonoBehaviour
     Timer timer;
     Timer taskTimer;
     bool isTaskGiven = false;
-
+    SunOrbiter[] stars;
     GameObject spawned;
     // Start is called before the first frame update
     void Start()
@@ -31,6 +31,8 @@ public class TaskManager : MonoBehaviour
         distance = player.position.z - mainCamera.transform.position.z;
         leftBottomCorner = mainCamera.ViewportToWorldPoint(new Vector3(0, 0, distance));
         rightTopCorner = mainCamera.ViewportToWorldPoint(new Vector3(1, 1, distance));
+
+        stars = FindObjectsOfType<SunOrbiter>();
     }
 
     private void Update()
@@ -61,12 +63,12 @@ public class TaskManager : MonoBehaviour
             return -9;
     }
 
-    void Spawn(int Task, float size, Vector3 Location)
+    /*void Spawn(int Task, float size, Vector3 Location)
     {
         spawned = Instantiate(taskObjectList[Task], Location, Quaternion.identity);
         spawned.GetComponent<Edibles>().size = size;
     }
-
+    */ 
     Vector3 LocationGenerator()
     {
         Vector3 location = Vector3.zero;
@@ -100,12 +102,14 @@ public class TaskManager : MonoBehaviour
     void GiveTask()
     {
         float size = SizeGenerator();
-        Spawn(SupremeTaskSelector(), size, LocationGenerator());
+        //Spawn(SupremeTaskSelector(), size, LocationGenerator());
+        spawned = stars[Random.Range(0, stars.Length)].GetComponent<SunOrbiter>().AddPlanet(taskObjectList[SupremeTaskSelector()]);//added
         spawned.GetComponent<TaskObjectsBase>().targetSize = size;
         spawned.GetComponent<Edibles>().size = size;
         //taskTextUI.text = spawned.GetComponent<TaskObjectsBase>().taskText;
         isTaskGiven = true;
         taskTimer.StartTimer();
+        
         
     }
 
