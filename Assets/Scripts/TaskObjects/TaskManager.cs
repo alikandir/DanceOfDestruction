@@ -115,5 +115,6 @@ public class TaskManager : MonoBehaviour
     public void TaskFailed()
     {
         Debug.Log("GAME OVER");
+        timer.StartTimer();
     }
 }
