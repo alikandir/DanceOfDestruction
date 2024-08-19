@@ -20,7 +20,7 @@ public class Timer
 
     public void StartTimer()
     {
-        targetTime = Time.time;
+        targetTime = Time.time + time;
     }
 
     
