@@ -1365,6 +1365,12 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+--- !u!1 &613859407 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2352594464321533101, guid: a2f5250c026563342a6b8e654b7832cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1038428849}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &663845231 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 707358561195113792, guid: 0c69b0eeaaa52f744999fbaf413bde53,
@@ -1714,6 +1720,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4486797890049474401, guid: 17b31ef2775d7b04bac71b571052b9fb,
         type: 3}
+    - target: {fileID: 5159562570380445363, guid: 5623818e7fc9e574b82e7d30ac5e12ed,
+        type: 3}
+      propertyPath: whitePlanet
+      value: 
+      objectReference: {fileID: 613859407}
     - target: {fileID: 6000999439282389039, guid: 5623818e7fc9e574b82e7d30ac5e12ed,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3819,7 +3830,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 10
+  maxSize: 100
   baseGrowthFactor: 0.1
+  sizOmeterImage: {fileID: 1659780226}
 --- !u!114 &1897965006
 MonoBehaviour:
   m_ObjectHideFlags: 0
