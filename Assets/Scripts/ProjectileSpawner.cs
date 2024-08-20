@@ -9,7 +9,9 @@ public class ProjectileSpawner : MonoBehaviour
     [SerializeField] Camera mainCamera;
     [SerializeField] Transform player;
     [SerializeField] GameObject projectile;
+    public GameObject whitePlanet;
     [SerializeField] float spawnCooldown = 3f;
+    public float whiteHoleSpawnCooldown = 5f;
     public float projectileSpeed = 5f;
     float playerSize;
     float distance;
@@ -24,6 +26,7 @@ public class ProjectileSpawner : MonoBehaviour
         leftBottomCorner = mainCamera.ViewportToWorldPoint(new Vector3(0, 0, distance));
         rightTopCorner = mainCamera.ViewportToWorldPoint(new Vector3(1, 1, distance));
         StartCoroutine(SpawnCoroutine());
+        StartCoroutine(WhiteHoleSpawnCoroutine());
     }
     private void Update()
     {
@@ -38,23 +41,8 @@ public class ProjectileSpawner : MonoBehaviour
     Vector3 LocationGenerator()
     {
         Vector3 location = Vector3.zero;
-        int side = Random.Range(0, 4); //0 is left 1 is top 2 is right 3 is bottom
-        if (side == 0)
-        {
-            location = new Vector3(leftBottomCorner.x, Random.Range(leftBottomCorner.y,rightTopCorner.y) , player.position.z);
-        }
-        else if (side == 1)
-        {
-            location = new Vector3(Random.Range(leftBottomCorner.x, rightTopCorner.x), rightTopCorner.y, player.position.z);
-        }
-        else if(side == 2)
-        {
-            location = new Vector3(rightTopCorner.x, Random.Range(leftBottomCorner.y, rightTopCorner.y) , player.position.z);
-        }
-        else if(side == 3)
-        {
-            location = new Vector3(Random.Range(leftBottomCorner.x, rightTopCorner.x),leftBottomCorner.y ,player.position.z );
-        }
+
+        location = new Vector3(Random.Range(-150,320), Random.Range(-150, 130), 0);
 
         return location;
     }
@@ -63,15 +51,12 @@ public class ProjectileSpawner : MonoBehaviour
     {
         GameObject spawned = Instantiate(projectile, LocationGenerator(), Quaternion.identity);
         spawned.GetComponent<Edibles>().size = size;
-        spawned.GetComponent<ProjectileMovement>().Velocity = velocity; 
-        if (Random.Range(0f, 1f) <= 0.8f)
-        {
-            spawned.GetComponent<Edibles>().isMakingBig=true;
-        }
-        else 
-        {
-            spawned.GetComponent<Edibles>().isMakingBig = false;
-        }
+        spawned.GetComponent<ProjectileMovement>().Velocity = velocity;        
+    }
+    void SpawnWhiteHole(float size = 10f)
+    {
+        GameObject spawned = Instantiate(whitePlanet, LocationGenerator(), Quaternion.identity);
+        spawned.GetComponent<Edibles>().size = size;
         
     }
     IEnumerator SpawnCoroutine()
@@ -85,6 +70,18 @@ public class ProjectileSpawner : MonoBehaviour
             Spawn(spawnSize,projectileSpeed);
             
               
+        }
+    }
+    IEnumerator WhiteHoleSpawnCoroutine()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(whiteHoleSpawnCooldown);
+
+            playerSize = player.gameObject.GetComponent<PlayerSizeControl>().size;
+            float spawnSize = SizeGenerator();
+            SpawnWhiteHole(spawnSize);
+            
         }
     }
 
