@@ -17,6 +17,8 @@ public class PlayerSizeControl : MonoBehaviour
             if (edible.size <= this.size)
             {
                 TunePlayerSize(edible.size,edible.isMakingBig);
+                if (edible.gameObject.GetComponent<TaskObjectsBase>() != null)
+                { edible.gameObject.GetComponent<TaskObjectsBase>().CompleteTask();}
                 Destroy(edible.gameObject);
                 OnEat?.Invoke(size);
             }
