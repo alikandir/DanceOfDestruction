@@ -52,7 +52,7 @@ public class TaskManager : MonoBehaviour
         {
             GiveTask();
             isTaskGiven = true; // Ensure this is set immediately after giving a task
-            Debug.Log("Task Given: " + isTaskGiven);
+            
         }
         else if (isTaskGiven && taskTimer.TimeOut)
         {
@@ -122,7 +122,7 @@ public class TaskManager : MonoBehaviour
         spawned.GetComponent<TaskObjectsBase>().OnTaskComplete += TaskComplete;
         isTaskGiven = true;
         taskTimer.StartTimer();
-        Debug.Log("New Task");
+        
         
     }
 
@@ -131,7 +131,7 @@ public class TaskManager : MonoBehaviour
         isTaskGiven = false;
         timer.StartTimer();
         OnTaskFinished.Invoke();
-        Debug.Log("Task Completed");
+        
     }
 
     public void TaskFailed()
