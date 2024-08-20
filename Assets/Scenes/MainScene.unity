@@ -2156,7 +2156,7 @@ PrefabInstance:
     - target: {fileID: 1811179899203790641, guid: fb6829d2b5fbd144bb7402b2980d848b,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 97.9
+      value: 244
       objectReference: {fileID: 0}
     - target: {fileID: 1811179899203790641, guid: fb6829d2b5fbd144bb7402b2980d848b,
         type: 3}
@@ -4791,13 +4791,58 @@ PrefabInstance:
       objectReference: {fileID: 1331981044}
     - target: {fileID: 2816375895429477829, guid: 0611874a0acf6144bb6e47e1e25bad86,
         type: 3}
+      propertyPath: tenthEvent
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816375895429477829, guid: 0611874a0acf6144bb6e47e1e25bad86,
+        type: 3}
+      propertyPath: ninethEvent
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816375895429477829, guid: 0611874a0acf6144bb6e47e1e25bad86,
+        type: 3}
+      propertyPath: eleEventYear
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816375895429477829, guid: 0611874a0acf6144bb6e47e1e25bad86,
+        type: 3}
       propertyPath: popUpOffSet.y
       value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2816375895429477829, guid: 0611874a0acf6144bb6e47e1e25bad86,
         type: 3}
+      propertyPath: twelEventYear
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816375895429477829, guid: 0611874a0acf6144bb6e47e1e25bad86,
+        type: 3}
+      propertyPath: eightEventYear
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816375895429477829, guid: 0611874a0acf6144bb6e47e1e25bad86,
+        type: 3}
+      propertyPath: fifthEventYear
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816375895429477829, guid: 0611874a0acf6144bb6e47e1e25bad86,
+        type: 3}
       propertyPath: firstEventYear
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816375895429477829, guid: 0611874a0acf6144bb6e47e1e25bad86,
+        type: 3}
+      propertyPath: forthEventYear
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816375895429477829, guid: 0611874a0acf6144bb6e47e1e25bad86,
+        type: 3}
+      propertyPath: sixthEventYear
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816375895429477829, guid: 0611874a0acf6144bb6e47e1e25bad86,
+        type: 3}
+      propertyPath: thirdEventYear
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2816375895429477829, guid: 0611874a0acf6144bb6e47e1e25bad86,
         type: 3}
@@ -4811,6 +4856,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2816375895429477829, guid: 0611874a0acf6144bb6e47e1e25bad86,
         type: 3}
+      propertyPath: secondEventYear
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816375895429477829, guid: 0611874a0acf6144bb6e47e1e25bad86,
+        type: 3}
       propertyPath: thirdEventPopUp
       value: The first book was written in the universe. However, since the author
         couldn't make copies, the whole city is renting the book.
@@ -4820,6 +4870,16 @@ PrefabInstance:
       propertyPath: secondEventPopUp
       value: The Yugana Tribe built a building. Their people believe it will bring
         prosperity.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816375895429477829, guid: 0611874a0acf6144bb6e47e1e25bad86,
+        type: 3}
+      propertyPath: seventhEventYear
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816375895429477829, guid: 0611874a0acf6144bb6e47e1e25bad86,
+        type: 3}
+      propertyPath: thirteenEventYear
+      value: 650
       objectReference: {fileID: 0}
     - target: {fileID: 3188392980074108560, guid: 0611874a0acf6144bb6e47e1e25bad86,
         type: 3}

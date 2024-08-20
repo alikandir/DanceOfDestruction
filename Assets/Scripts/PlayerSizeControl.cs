@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerSizeControl : MonoBehaviour
@@ -69,7 +70,7 @@ public class PlayerSizeControl : MonoBehaviour
         { sizOmeterImage.color = Color.cyan; }
         if (sizOmeterImage.fillAmount >= 1)
         {
-            GameOver();
+            GameOverEmit();
         }
     }
 
@@ -77,5 +78,6 @@ public class PlayerSizeControl : MonoBehaviour
     public void GameOverEmit()
     {
         GameOver?.Invoke();
+        SceneManager.LoadScene("GameOver");
     }
 }
