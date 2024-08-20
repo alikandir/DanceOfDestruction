@@ -40,8 +40,11 @@ public class EasterEggSpawner : MonoBehaviour
             easterSpawnTimer.StartTimer();
             easterCounter++;
             if(easterCounter == EasterEggObjects.Length)
+            {
                 easterCounter = 0;
                 this.enabled = false;
+            }
+ 
         }
     }
 
