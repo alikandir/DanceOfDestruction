@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1551073045053934951}
   - component: {fileID: 2408380056082531490}
   - component: {fileID: -8195513192634446035}
+  - component: {fileID: -5510329493376112307}
   m_Layer: 0
   m_Name: bananaaaaaaaaaaaaaaaablend
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: 6.446351, y: 0, z: 0}
-  m_LocalScale: {x: 484.02795, y: 484.02795, z: 484.02795}
+  m_LocalScale: {x: 250, y: 250, z: 250}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -98,5 +99,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMakingBig: 1
-  size: 10
+  size: 20
   baseGrowthFactor: 0.1
+--- !u!135 &-5510329493376112307
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4264052348627957784}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.013109041
+  m_Center: {x: -0.00008777529, y: -2.0107176e-17, z: 0.0028298332}

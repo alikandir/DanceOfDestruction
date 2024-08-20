@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4271495154045290575}
   - component: {fileID: 971021162990925810}
   - component: {fileID: -4662119051717650275}
+  - component: {fileID: -3631697219693414915}
   m_Layer: 0
   m_Name: tuvaletgezegeni
   m_TagString: Untagged
@@ -99,3 +100,24 @@ MonoBehaviour:
   isMakingBig: 1
   size: 10
   baseGrowthFactor: 0.1
+--- !u!135 &-3631697219693414915
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034978271487941932}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.014702401
+  m_Center: {x: 0.00051414967, y: -0.00021067541, z: 0.0047024013}

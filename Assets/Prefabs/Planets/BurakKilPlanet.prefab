@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5272993047351159218}
   - component: {fileID: 1723059595420127341}
   - component: {fileID: -8005119134693378529}
+  - component: {fileID: 2118188914330059683}
   m_Layer: 0
   m_Name: BurakKilPlanet
   m_TagString: Untagged
@@ -104,3 +105,24 @@ MonoBehaviour:
   isMakingBig: 1
   size: 10
   baseGrowthFactor: 0.1
+--- !u!135 &2118188914330059683
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6224656059188275483}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.010306686
+  m_Center: {x: -0.00004162127, y: -0.0000054161064, z: 0.00033328403}

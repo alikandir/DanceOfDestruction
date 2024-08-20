@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7884829325298732761}
   - component: {fileID: 7497949838978400609}
   - component: {fileID: 3802258919461707854}
+  - component: {fileID: -7763548696773684303}
   m_Layer: 0
   m_Name: kedygezegen
   m_TagString: Untagged
@@ -104,3 +105,24 @@ MonoBehaviour:
   isMakingBig: 1
   size: 10
   baseGrowthFactor: 0.1
+--- !u!135 &-7763548696773684303
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8441178922648384120}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.014217109
+  m_Center: {x: -4.2186654e-10, y: 0.00008200657, z: 0.0042171003}
