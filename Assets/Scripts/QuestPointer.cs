@@ -51,16 +51,16 @@ public class QuestPointer : MonoBehaviour
         //if (isOffScreen)
         {
             RotatePointerTowardsTarget();
-           
-            pointerImage.sprite = arrowSprite;
-            Vector3 cappedTargetScreenPosition = targetPosScreenPoint;
-            if (cappedTargetScreenPosition.x <= borderSize) cappedTargetScreenPosition.x = 0f;
-            if (cappedTargetScreenPosition.x >= Screen.width - borderSize) cappedTargetScreenPosition.x = Screen.width - borderSize;
-            if (cappedTargetScreenPosition.y <= borderSize) cappedTargetScreenPosition.y = 0f;
-            if (cappedTargetScreenPosition.y >= Screen.height - borderSize) cappedTargetScreenPosition.y = Screen.height - borderSize;
-            Vector3 pointerWorldPosition = uiCamera.ScreenToWorldPoint(cappedTargetScreenPosition);
-            pointerTransform.position = pointerWorldPosition;
-            pointerTransform.localPosition = new Vector3(pointerTransform.localPosition.x, pointerTransform.localPosition.y, 0f);
+
+            //pointerImage.sprite = arrowSprite;
+            //Vector3 cappedTargetScreenPosition = targetPosScreenPoint;
+            //if (cappedTargetScreenPosition.x <= borderSize) cappedTargetScreenPosition.x = 0f;
+            //if (cappedTargetScreenPosition.x >= Screen.width - borderSize) cappedTargetScreenPosition.x = Screen.width - borderSize;
+            //if (cappedTargetScreenPosition.y <= borderSize) cappedTargetScreenPosition.y = 0f;
+            //if (cappedTargetScreenPosition.y >= Screen.height - borderSize) cappedTargetScreenPosition.y = Screen.height - borderSize;
+            //Vector3 pointerWorldPosition = uiCamera.ScreenToWorldPoint(cappedTargetScreenPosition);
+            //pointerTransform.position = pointerWorldPosition;
+            //pointerTransform.localPosition = new Vector3(pointerTransform.localPosition.x, pointerTransform.localPosition.y, 0f);
 
         }
         //else 
