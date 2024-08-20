@@ -14,6 +14,7 @@ public class CameraAdjust : MonoBehaviour
     public CinemachineVirtualCamera cinemachineCam;
     private Vector3 _followOffset;
     private PlayerMovement playerMovement;
+    private float cameraChangeAdjuster= 1.3f;
     private void Awake()
     {
         playerMovement = GetComponent<PlayerMovement>();
@@ -33,7 +34,7 @@ public class CameraAdjust : MonoBehaviour
     }
     void HandleBlackHoleGrowth(float playerSize)
     {
-        if ( this.gameObject.transform.localScale.x> _playerSizeThreshhold * 2)
+        if ( this.gameObject.transform.localScale.x> _playerSizeThreshhold * cameraChangeAdjuster)
         {
             spawner.projectileSpeed *= 2; //i am speed
             playerMovement.moveSpeed *= 2; //we are speed
@@ -41,7 +42,7 @@ public class CameraAdjust : MonoBehaviour
             _followOffset *= 2;
             _playerSizeThreshhold = this.gameObject.transform.localScale.x;
         }
-        else if (this.gameObject.transform.localScale.x < _playerSizeThreshhold / 2)
+        else if (this.gameObject.transform.localScale.x < _playerSizeThreshhold / cameraChangeAdjuster)
         {
             spawner.projectileSpeed /= 2; //i am sped
             playerMovement.moveSpeed /= 2; //we are sped

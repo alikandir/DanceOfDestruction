@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -21,6 +22,8 @@ public class TaskManager : MonoBehaviour
     bool isTaskGiven = false;
     SunOrbiter[] stars;
     GameObject spawned;
+    public event Action<GameObject> SpawnedTask;
+    public event Action OnTaskFinished;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,7 +60,7 @@ public class TaskManager : MonoBehaviour
     {
         if (taskObjectList.Length > 0)
         {
-            return Random.Range(0, taskObjectList.Length);
+            return UnityEngine.Random.Range(0, taskObjectList.Length);
         }
         else
             return -9;
@@ -72,22 +75,22 @@ public class TaskManager : MonoBehaviour
     Vector3 LocationGenerator()
     {
         Vector3 location = Vector3.zero;
-        int side = Random.Range(0, 4); //0 is left 1 is top 2 is right 3 is bottom
+        int side = UnityEngine.Random.Range(0, 4); //0 is left 1 is top 2 is right 3 is bottom
         if (side == 0)
         {
-            location = new Vector3(leftBottomCorner.x, Random.Range(leftBottomCorner.y, rightTopCorner.y), player.position.z);
+            location = new Vector3(leftBottomCorner.x, UnityEngine.Random.Range(leftBottomCorner.y, rightTopCorner.y), player.position.z);
         }
         else if (side == 1)
         {
-            location = new Vector3(Random.Range(leftBottomCorner.x, rightTopCorner.x), rightTopCorner.y, player.position.z);
+            location = new Vector3(UnityEngine.Random.Range(leftBottomCorner.x, rightTopCorner.x), rightTopCorner.y, player.position.z);
         }
         else if (side == 2)
         {
-            location = new Vector3(rightTopCorner.x, Random.Range(leftBottomCorner.y, rightTopCorner.y), player.position.z);
+            location = new Vector3(rightTopCorner.x, UnityEngine.Random.Range(leftBottomCorner.y, rightTopCorner.y), player.position.z);
         }
         else if (side == 3)
         {
-            location = new Vector3(Random.Range(leftBottomCorner.x, rightTopCorner.x), leftBottomCorner.y, player.position.z);
+            location = new Vector3(UnityEngine.Random.Range(leftBottomCorner.x, rightTopCorner.x), leftBottomCorner.y, player.position.z);
         }
 
         return 2 * location - player.transform.position;
@@ -96,20 +99,20 @@ public class TaskManager : MonoBehaviour
     float SizeGenerator()
     {
         float plSize = player.transform.gameObject.GetComponent<PlayerSizeControl>().size;
-        return plSize * Random.Range(1.5f, 2f);
+        return plSize * UnityEngine.Random.Range(1.5f, 2f);
     }
 
     void GiveTask()
     {
         float size = SizeGenerator();
         //Spawn(SupremeTaskSelector(), size, LocationGenerator());
-        spawned = stars[Random.Range(0, stars.Length)].GetComponent<SunOrbiter>().AddPlanet(taskObjectList[SupremeTaskSelector()]);//added
+        spawned = stars[UnityEngine.Random.Range(0, stars.Length)].GetComponent<SunOrbiter>().AddPlanet(taskObjectList[SupremeTaskSelector()]);//added
         spawned.GetComponent<TaskObjectsBase>().targetSize = size;
         spawned.GetComponent<Edibles>().size = size;
         //taskTextUI.text = spawned.GetComponent<TaskObjectsBase>().taskText;
+        SpawnedTask?.Invoke(spawned);
         isTaskGiven = true;
         taskTimer.StartTimer();
-        
         
     }
 
@@ -117,6 +120,7 @@ public class TaskManager : MonoBehaviour
     {
         isTaskGiven = false;
         timer.StartTimer();
+        OnTaskFinished.Invoke();
         Debug.Log("Task Completed");
     }
 

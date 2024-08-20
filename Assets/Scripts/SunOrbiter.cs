@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static SunOrbiter;
+
 
 public class SunOrbiter : MonoBehaviour
 {
@@ -48,9 +48,9 @@ public class SunOrbiter : MonoBehaviour
     {
         Planet pl = new Planet();
         pl.planetPrefab = planetPrefab;
-        pl.orbitDistance = planets[planets.Count-1].orbitDistance;
-        pl.orbitSpeed = planets[planets.Count-1].orbitSpeed;
-        pl.rotationSpeed = planets[planets.Count - 1].rotationSpeed;
+        pl.orbitDistance = planets[planets.Count-1].orbitDistance+10;
+        pl.orbitSpeed = planets[planets.Count-1].orbitSpeed+10;
+        pl.rotationSpeed = planets[planets.Count - 1].rotationSpeed + 10;
 
         Vector3 spawnPosition = transform.position + new Vector3(pl.orbitDistance, 0, 0);
         pl.planetObject = Instantiate(pl.planetPrefab, spawnPosition, Quaternion.identity);
