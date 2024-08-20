@@ -13,13 +13,13 @@ public class YearTimer : MonoBehaviour
     public TextMeshProUGUI popUpText;
     public float firstEventYear;
     public float secondEventYear;
-    public float thirdEventYear;
+    public float thirdEventYear,forthEventYear,fifthEventYear,sixthEventYear,seventhEventYear,eightEventYear,ninethEvent,tenthEvent,eleEventYear,twelEventYear,thirteenEventYear;
     [TextAreaAttribute]
     public string firstEventPopUp;
     public string secondEventPopUp;
-    public string thirdEventPopUp;
+    public string thirdEventPopUp,forth,fifth,sixth,seventh,eighth,nineth,tenth,eleventh,twelth,thirteen;
     bool isPopping=false;
-    bool event1,event2,event3,event4;
+    bool event1,event2,event3,event4,event5,event6,event7,event8,event9,event10,event11,event12,event13=false;
     void Start()
     {
         if (yearTimerText == null)
@@ -56,7 +56,67 @@ public class YearTimer : MonoBehaviour
 
     void UpdatePopUpText()
     {
-        if (elapsedYears >= thirdEventYear && !isPopping && !event3)
+        if (elapsedYears >= thirdEventYear && !isPopping && !event13)
+        {
+            popUpText.text = thirteen;
+            ShowPopUpText();
+            event13 = true;
+        }
+        else if (elapsedYears >= twelEventYear && !isPopping && !event12)
+        {
+            popUpText.text = twelth;
+            ShowPopUpText();
+            event12 = true;
+        }
+        else if (elapsedYears >= eleEventYear && !isPopping && !event11)
+        {
+            popUpText.text = eleventh;
+            ShowPopUpText();
+            event11 = true;
+        }
+        else if (elapsedYears >= tenthEvent && !isPopping && !event10)
+        {
+            popUpText.text = tenth;
+            ShowPopUpText();
+            event10 = true;
+        }
+        else if (elapsedYears >= ninethEvent && !isPopping && !event9)
+        {
+            popUpText.text = nineth;
+            ShowPopUpText();
+            event9 = true;
+        }
+        else if (elapsedYears >= eightEventYear && !isPopping && !event8)
+        {
+            popUpText.text = eighth;
+            ShowPopUpText();
+            event8 = true;
+        }
+        else if (elapsedYears >= seventhEventYear && !isPopping && !event7)
+        {
+            popUpText.text = seventh;
+            ShowPopUpText();
+            event7 = true;
+        }
+        else if (elapsedYears >= sixthEventYear && !isPopping && !event6)
+        {
+            popUpText.text = sixth;
+            ShowPopUpText();
+            event6 = true;
+        }
+        else if (elapsedYears >= fifthEventYear && !isPopping && !event5)
+        {
+            popUpText.text = fifth;
+            ShowPopUpText();
+            event5 = true;
+        }
+        else if (elapsedYears >= forthEventYear && !isPopping && !event4)
+        {
+            popUpText.text = forth;
+            ShowPopUpText();
+            event4 = true;
+        }
+        else if (elapsedYears >= thirdEventYear && !isPopping && !event3)
         {
             popUpText.text = thirdEventPopUp;
             ShowPopUpText();

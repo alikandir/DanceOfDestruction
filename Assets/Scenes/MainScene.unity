@@ -5210,6 +5210,63 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2816375895429477829, guid: 0611874a0acf6144bb6e47e1e25bad86,
         type: 3}
+      propertyPath: fifth
+      value: The new cave paintings of Earth are burning hot!
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816375895429477829, guid: 0611874a0acf6144bb6e47e1e25bad86,
+        type: 3}
+      propertyPath: forth
+      value: The Fasula Planet produced the first computer. Negotiations with other
+        galaxies for the necessary minerals are ongoing.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816375895429477829, guid: 0611874a0acf6144bb6e47e1e25bad86,
+        type: 3}
+      propertyPath: sixth
+      value: Saturn got married. We wish them happiness.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816375895429477829, guid: 0611874a0acf6144bb6e47e1e25bad86,
+        type: 3}
+      propertyPath: tenth
+      value: Humans have discovered something called a train. Now they can read newspapers
+        faster.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816375895429477829, guid: 0611874a0acf6144bb6e47e1e25bad86,
+        type: 3}
+      propertyPath: eighth
+      value: The Jarara people opened an exhibition. All the artists in the universe
+        are gathering.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816375895429477829, guid: 0611874a0acf6144bb6e47e1e25bad86,
+        type: 3}
+      propertyPath: nineth
+      value: The Ref War continues. The people of the planet are in despair, longing
+        for the war to end.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816375895429477829, guid: 0611874a0acf6144bb6e47e1e25bad86,
+        type: 3}
+      propertyPath: twelth
+      value: 'The construction of the first architectural work on a cosmic scale
+        is completed: Talatala Mauga.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816375895429477829, guid: 0611874a0acf6144bb6e47e1e25bad86,
+        type: 3}
+      propertyPath: seventh
+      value: Black holes have caused an invasion in the universe. Love knows no bounds.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816375895429477829, guid: 0611874a0acf6144bb6e47e1e25bad86,
+        type: 3}
+      propertyPath: eleventh
+      value: 'Creatures have developed a technology in the universe that allows for
+        faster movement: the LDP(Light Disintegrator Permeator).'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816375895429477829, guid: 0611874a0acf6144bb6e47e1e25bad86,
+        type: 3}
+      propertyPath: thirteen
+      value: The Universal F1 races continue. The previous champion, Ura Mene, has
+        this time been overtaken by Martian Yata Vefala.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816375895429477829, guid: 0611874a0acf6144bb6e47e1e25bad86,
+        type: 3}
       propertyPath: popUpText
       value: 
       objectReference: {fileID: 1331981044}
@@ -5231,7 +5288,19 @@ PrefabInstance:
     - target: {fileID: 2816375895429477829, guid: 0611874a0acf6144bb6e47e1e25bad86,
         type: 3}
       propertyPath: firstEventPopUp
-      value: 
+      value: The first life forms have started to appear in the universe.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816375895429477829, guid: 0611874a0acf6144bb6e47e1e25bad86,
+        type: 3}
+      propertyPath: thirdEventPopUp
+      value: The first book was written in the universe. However, since the author
+        couldn't make copies, the whole city is renting the book.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816375895429477829, guid: 0611874a0acf6144bb6e47e1e25bad86,
+        type: 3}
+      propertyPath: secondEventPopUp
+      value: The Yugana Tribe built a building. Their people believe it will bring
+        prosperity.
       objectReference: {fileID: 0}
     - target: {fileID: 3188392980074108560, guid: 0611874a0acf6144bb6e47e1e25bad86,
         type: 3}
@@ -5248,7 +5317,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: -474797914117821341, guid: e74a35d8c0460634baea13a89f691f25,
+      objectReference: {fileID: -22835189501028507, guid: e74a35d8c0460634baea13a89f691f25,
         type: 2}
     - target: {fileID: 3188392980074108560, guid: 0611874a0acf6144bb6e47e1e25bad86,
         type: 3}

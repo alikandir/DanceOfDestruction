@@ -14,6 +14,7 @@ public class PlayerSizeControl : MonoBehaviour
     public event Action<float> OnEat; //passes the player size
     public Image sizOmeterImage;
     public event Action GameOver;
+    Color startColor;
     private void Awake()
     {
         UpdateImageSize();
@@ -32,6 +33,10 @@ public class PlayerSizeControl : MonoBehaviour
                 OnEat?.Invoke(size);
             }
         }
+    }
+    private void Start()
+    {
+        startColor = sizOmeterImage.color;
     }
     public void TunePlayerSize(float objectSize, bool isMakingBig)
     {
@@ -56,11 +61,18 @@ public class PlayerSizeControl : MonoBehaviour
     public void UpdateImageSize()
     {
         sizOmeterImage.fillAmount = size / maxSize;
-        if (sizOmeterImage.fillAmount == 1)
+        if (sizOmeterImage.fillAmount >= 0.70)
+        {
+            sizOmeterImage.color = Color.red;
+        }
+        else if (sizOmeterImage.fillAmount < 0.70)
+        { sizOmeterImage.color = Color.cyan; }
+        if (sizOmeterImage.fillAmount >= 1)
         {
             GameOver();
         }
     }
+
 
     public void GameOverEmit()
     {
