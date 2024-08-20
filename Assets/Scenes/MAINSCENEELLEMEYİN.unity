@@ -952,7 +952,7 @@ MonoBehaviour:
   - {fileID: 351861424226768212, guid: a1b515157b659614895986ded29ab875, type: 3}
   - {fileID: 1347246439784573166, guid: 28bb47ab2c483a643ae54519438885ca, type: 3}
   - {fileID: 6417682729937518474, guid: 7aa7ae1a40ff2e24697ddc9dfc0d2210, type: 3}
-  easterEggSpawnTime: 120
+  easterEggSpawnTime: 25
   velocity: 3
 --- !u!1001 &405732735
 PrefabInstance:
