@@ -41,13 +41,14 @@ public class EasterEggSpawner : MonoBehaviour
             easterCounter++;
             if(easterCounter == EasterEggObjects.Length)
                 easterCounter = 0;
+                this.enabled = false;
         }
     }
 
 
     void Spawn(int index)
     {   
-        GameObject spawned = Instantiate(EasterEggObjects[index], LocationGenerator(), Quaternion.identity);
+        GameObject spawned = Instantiate(EasterEggObjects[index], LocationGenerator(), EasterEggObjects[index].transform.rotation);
         spawned.AddComponent<Rigidbody>();
         spawned.GetComponent<Rigidbody>().useGravity = false;
         if(spawned.transform.position.x>player.position.x)
