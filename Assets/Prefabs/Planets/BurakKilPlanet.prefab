@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3233930593206504136}
   - component: {fileID: 5272993047351159218}
   - component: {fileID: 1723059595420127341}
+  - component: {fileID: -8005119134693378529}
   m_Layer: 0
   m_Name: BurakKilPlanet
   m_TagString: Untagged
@@ -88,3 +89,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-8005119134693378529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6224656059188275483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ad9924173b9aba41a9b15f551cded94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMakingBig: 1
+  size: 10
+  baseGrowthFactor: 0.1

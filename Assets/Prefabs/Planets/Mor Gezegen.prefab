@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1425128799438569268}
   - component: {fileID: 3801252631999398326}
   - component: {fileID: 6098765534075166735}
+  - component: {fileID: -2291394253207312837}
   m_Layer: 0
   m_Name: Mor Gezegen
   m_TagString: Untagged
@@ -117,3 +118,18 @@ MonoBehaviour:
   targetSize: 10
   flavorText: "d\xFCzelen gezenge"
   taskText: yer mi
+--- !u!114 &-2291394253207312837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369804229308634494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ad9924173b9aba41a9b15f551cded94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMakingBig: 1
+  size: 10
+  baseGrowthFactor: 0.1

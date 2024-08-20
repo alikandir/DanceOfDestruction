@@ -345,6 +345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6502156660584739686}
   - component: {fileID: 4384957419678170523}
+  - component: {fileID: -6102009395149357503}
   m_Layer: 0
   m_Name: MordecaiRigby 1
   m_TagString: Untagged
@@ -411,6 +412,21 @@ MonoBehaviour:
   targetSize: 10
   flavorText: pembik
   taskText: "\u015Fekerdir yenir"
+--- !u!114 &-6102009395149357503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2665722452753363235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ad9924173b9aba41a9b15f551cded94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMakingBig: 1
+  size: 10
+  baseGrowthFactor: 0.1
 --- !u!1 &2737943606776555836
 GameObject:
   m_ObjectHideFlags: 0
