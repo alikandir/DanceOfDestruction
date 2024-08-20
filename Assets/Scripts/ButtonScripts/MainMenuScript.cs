@@ -36,4 +36,10 @@ public class MainMenuScript : MonoBehaviour
         mainMenu.SetActive(false);
         current = howtoplay;
     }
+
+    public void Exit()
+    {
+        Application.Quit();
+        Debug.Log("exit");
+    }
 }
