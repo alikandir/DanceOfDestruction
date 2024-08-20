@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
+
 
 public class TaskManager : MonoBehaviour
 {
@@ -38,10 +38,7 @@ public class TaskManager : MonoBehaviour
         stars = FindObjectsOfType<SunOrbiter>();
     }
     
-    private void OnDisable()
-    {
-        spawned.GetComponent<TaskObjectsBase>().OnTaskComplete -= TaskComplete;
-    }
+    
     private void Update()
     {
         distance = player.position.z - mainCamera.transform.position.z;
@@ -136,7 +133,6 @@ public class TaskManager : MonoBehaviour
 
     public void TaskFailed()
     {
-        Debug.Log("GAME OVER");
-        timer.StartTimer();
+        player.GetComponent<PlayerSizeControl>().GameOverEmit();
     }
 }

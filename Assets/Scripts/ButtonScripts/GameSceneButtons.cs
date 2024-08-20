@@ -8,7 +8,7 @@ public class GameSceneButtons : MonoBehaviour
     bool isGamePaused = false;
     public void Restart()
     {
-        SceneManager.LoadScene("MAINSCENEELLEMEYÝN");
+        SceneManager.LoadScene("MainScene");
     }
 
     public void Pause()

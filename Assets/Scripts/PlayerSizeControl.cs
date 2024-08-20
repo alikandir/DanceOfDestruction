@@ -13,7 +13,7 @@ public class PlayerSizeControl : MonoBehaviour
 
     public event Action<float> OnEat; //passes the player size
     public Image sizOmeterImage;
-
+    public event Action GameOver;
     private void Awake()
     {
         UpdateImageSize();
@@ -56,5 +56,14 @@ public class PlayerSizeControl : MonoBehaviour
     public void UpdateImageSize()
     {
         sizOmeterImage.fillAmount = size / maxSize;
+        if (sizOmeterImage.fillAmount == 1)
+        {
+            GameOver();
+        }
+    }
+
+    public void GameOverEmit()
+    {
+        GameOver?.Invoke();
     }
 }

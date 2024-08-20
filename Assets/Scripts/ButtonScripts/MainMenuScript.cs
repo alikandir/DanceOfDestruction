@@ -11,7 +11,7 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField] GameObject howtoplay;
     public void PlayButton()
     {
-        SceneManager.LoadScene("MAINSCENEELLEMEYÝN");
+        SceneManager.LoadScene("MainScene");
     }
 
 
