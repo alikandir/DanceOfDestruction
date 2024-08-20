@@ -1,4 +1,3 @@
-using CodeMonkey.Utils;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -49,30 +48,30 @@ public class QuestPointer : MonoBehaviour
         float borderSize = 100f;
         Vector3 targetPosScreenPoint = Camera.main.WorldToScreenPoint(targetLocation);
         bool isOffScreen = targetPosScreenPoint.x <= borderSize || targetPosScreenPoint.x > Screen.width - borderSize || targetPosScreenPoint.y <= borderSize || targetPosScreenPoint.y > Screen.height - borderSize;
-        if (isOffScreen)
+        //if (isOffScreen)
         {
             RotatePointerTowardsTarget();
-           
-            pointerImage.sprite = arrowSprite;
-            Vector3 cappedTargetScreenPosition = targetPosScreenPoint;
-            if (cappedTargetScreenPosition.x <= borderSize) cappedTargetScreenPosition.x = 0f;
-            if (cappedTargetScreenPosition.x >= Screen.width - borderSize) cappedTargetScreenPosition.x = Screen.width - borderSize;
-            if (cappedTargetScreenPosition.y <= borderSize) cappedTargetScreenPosition.y = 0f;
-            if (cappedTargetScreenPosition.y >= Screen.height - borderSize) cappedTargetScreenPosition.y = Screen.height - borderSize;
-            Vector3 pointerWorldPosition = uiCamera.ScreenToWorldPoint(cappedTargetScreenPosition);
-            pointerTransform.position = pointerWorldPosition;
-            pointerTransform.localPosition = new Vector3(pointerTransform.localPosition.x, pointerTransform.localPosition.y, 0f);
+
+            //pointerImage.sprite = arrowSprite;
+            //Vector3 cappedTargetScreenPosition = targetPosScreenPoint;
+            //if (cappedTargetScreenPosition.x <= borderSize) cappedTargetScreenPosition.x = 0f;
+            //if (cappedTargetScreenPosition.x >= Screen.width - borderSize) cappedTargetScreenPosition.x = Screen.width - borderSize;
+            //if (cappedTargetScreenPosition.y <= borderSize) cappedTargetScreenPosition.y = 0f;
+            //if (cappedTargetScreenPosition.y >= Screen.height - borderSize) cappedTargetScreenPosition.y = Screen.height - borderSize;
+            //Vector3 pointerWorldPosition = uiCamera.ScreenToWorldPoint(cappedTargetScreenPosition);
+            //pointerTransform.position = pointerWorldPosition;
+            //pointerTransform.localPosition = new Vector3(pointerTransform.localPosition.x, pointerTransform.localPosition.y, 0f);
 
         }
-        else 
-        {
-            pointerTransform.localEulerAngles = new Vector3(0, 0, 0);
-            pointerImage.sprite = crossSprite;
-            Vector3 pointerWorldPosition = uiCamera.ScreenToWorldPoint(targetPosScreenPoint);
-            pointerTransform.position = pointerWorldPosition;
-            pointerTransform.localPosition = new Vector3(pointerTransform.localPosition.x, pointerTransform.localPosition.y, 0f);
-        }
-        if (isTarget)
+        //else 
+        //{
+        //    pointerTransform.localEulerAngles = new Vector3(0, 0, 0);
+        //    pointerImage.sprite = crossSprite;
+        //    Vector3 pointerWorldPosition = uiCamera.ScreenToWorldPoint(targetPosScreenPoint);
+        //    pointerTransform.position = pointerWorldPosition;
+        //    pointerTransform.localPosition = new Vector3(pointerTransform.localPosition.x, pointerTransform.localPosition.y, 0f);
+        //}
+        if (isTarget&&target!=null)
         {
             targetLocation = target.transform.position;
         }
@@ -84,8 +83,16 @@ public class QuestPointer : MonoBehaviour
         Vector3 fromPosition = Camera.main.transform.position;
         fromPosition.z = 0f;
         Vector3 dir = (toPosition - fromPosition).normalized;
-        float angle = UtilsClass.GetAngleFromVectorFloat(dir);
+        float angle = GetAngleFromVectorFloat(dir);
         pointerTransform.localEulerAngles = new Vector3(0, 0, angle);
+    }
+    public static float GetAngleFromVectorFloat(Vector3 dir)
+    {
+        dir = dir.normalized;
+        float n = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        if (n < 0) n += 360;
+
+        return n;
     }
     void PositionFinder(GameObject task)
     {

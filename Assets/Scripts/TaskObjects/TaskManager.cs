@@ -37,7 +37,11 @@ public class TaskManager : MonoBehaviour
 
         stars = FindObjectsOfType<SunOrbiter>();
     }
-
+    
+    private void OnDisable()
+    {
+        spawned.GetComponent<TaskObjectsBase>().OnTaskComplete -= TaskComplete;
+    }
     private void Update()
     {
         distance = player.position.z - mainCamera.transform.position.z;
@@ -109,10 +113,16 @@ public class TaskManager : MonoBehaviour
         spawned = stars[UnityEngine.Random.Range(0, stars.Length)].GetComponent<SunOrbiter>().AddPlanet(taskObjectList[SupremeTaskSelector()]);//added
         spawned.GetComponent<TaskObjectsBase>().targetSize = size;
         spawned.GetComponent<Edibles>().size = size;
-        //taskTextUI.text = spawned.GetComponent<TaskObjectsBase>().taskText;
+        if (taskTextUI != null)
+        {
+            taskTextUI.text = spawned.GetComponent<TaskObjectsBase>().taskText;
+        }
+
         SpawnedTask?.Invoke(spawned);
+        spawned.GetComponent<TaskObjectsBase>().OnTaskComplete += TaskComplete;
         isTaskGiven = true;
         taskTimer.StartTimer();
+        Debug.Log("New Task");
         
     }
 
