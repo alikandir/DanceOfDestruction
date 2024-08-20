@@ -13,6 +13,12 @@ public class ProjectileMovement : MonoBehaviour
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.velocity = (player.position - this.transform.position).normalized * Velocity;
         StartCoroutine(LifeTimeCounter());
+        Quaternion rotation = Quaternion.LookRotation(rb.velocity);
+        //transform.rotation = new Quaternion(rotation.x-90,rotation.y,rotation.z,rotation.w);
+        transform.rotation = rotation;
+        transform.eulerAngles=new Vector3 (transform.eulerAngles.x-90,transform.eulerAngles.y,transform.eulerAngles.z);
+
+
     }
     public IEnumerator LifeTimeCounter()
     {
