@@ -122,6 +122,56 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &530808929
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 530808930}
+  - component: {fileID: 530808931}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &530808930
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530808929}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.006520044, y: -0.111753635, z: -0.40755445}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &530808931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530808929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d685cde3bba482744bfaf0401ee42128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 1657782850}
+  EasterEggObjects:
+  - {fileID: 919132149155446097, guid: 6cb4fe477ef229f498a0b71e9a743e31, type: 3}
+  - {fileID: 919132149155446097, guid: 6fcf755ee92dc0f4491a1754863d62a3, type: 3}
+  easterEggSpawnTime: 3
+  velocity: 3
 --- !u!1 &923413819
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,7 +199,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 923413819}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -504,7 +554,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1718413701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -520,7 +570,10 @@ MonoBehaviour:
   mainCamera: {fileID: 1657782850}
   player: {fileID: 923413820}
   projectile: {fileID: 1526373838}
+  whitePlanet: {fileID: 0}
   spawnCooldown: 3
+  whiteHoleSpawnCooldown: 5
+  projectileSpeed: 5
 --- !u!4 &1718413702
 Transform:
   m_ObjectHideFlags: 0
@@ -613,3 +666,4 @@ SceneRoots:
   - {fileID: 923413820}
   - {fileID: 5398759057751957084}
   - {fileID: 1718413702}
+  - {fileID: 530808930}

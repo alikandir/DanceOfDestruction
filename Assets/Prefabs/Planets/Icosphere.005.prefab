@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4203175818110014391}
   - component: {fileID: 8831560641789194905}
   - component: {fileID: -6857209731922822948}
+  - component: {fileID: 8088476292636131591}
   m_Layer: 0
   m_Name: Icosphere.005
   m_TagString: Untagged
@@ -99,3 +100,24 @@ MonoBehaviour:
   isMakingBig: 1
   size: 10
   baseGrowthFactor: 0.1
+--- !u!135 &8088476292636131591
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030289604597950449}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.01
+  m_Center: {x: -4.656613e-10, y: 0, z: 0}

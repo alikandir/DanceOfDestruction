@@ -7,7 +7,7 @@ public class YearTimer : MonoBehaviour
 {
     private TextMeshProUGUI yearTimerText;       // Reference to the Year Timer TextMeshPro component
     public float timeMultiplier = 0.1f;           // Controls how fast the timer increments
-    private float elapsedYears = 2f;      // Starting at 2 million years
+    private float elapsedYears = 0f;      // Starting at 2 million years
     public Vector3 popUpOffSet;
     Vector3 popUpPos;
     public TextMeshProUGUI popUpText;
