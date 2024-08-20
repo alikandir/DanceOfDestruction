@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 5e8e0d18170db8343b07cd9151500989, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 29cf7ce7e868cc44aadfa6776970895c, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -352,7 +352,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.000000058051196, y: -0.0000000051657767, z: 0.0000000040328323,
     w: 1}
-  m_LocalPosition: {x: -34.17, y: 8.7, z: -10}
+  m_LocalPosition: {x: -154.8, y: -38.9, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1002,12 +1002,12 @@ PrefabInstance:
     - target: {fileID: 7756948365235328997, guid: 8c115998bae61b744b1c1429eaaf3345,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 104.4
+      value: 116.7
       objectReference: {fileID: 0}
     - target: {fileID: 7756948365235328997, guid: 8c115998bae61b744b1c1429eaaf3345,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 31.3
+      value: 44.6
       objectReference: {fileID: 0}
     - target: {fileID: 7756948365235328997, guid: 8c115998bae61b744b1c1429eaaf3345,
         type: 3}
@@ -2512,7 +2512,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.000000058051196, y: -0.000000005165777, z: -2.9987955e-16,
     w: 1}
-  m_LocalPosition: {x: -34.17, y: 8.7, z: -10}
+  m_LocalPosition: {x: -154.8, y: -38.9, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3142,6 +3142,12 @@ MonoBehaviour:
       type: 3}
     orbitDistance: 10
     orbitSpeed: 23
+    rotationSpeed: 95
+    planetObject: {fileID: 0}
+  - planetPrefab: {fileID: 8441178922648384120, guid: f2a77aac1c020304e90d0257896d9949,
+      type: 3}
+    orbitDistance: 20
+    orbitSpeed: 46
     rotationSpeed: 95
     planetObject: {fileID: 0}
 --- !u!1 &1644412920
@@ -3783,7 +3789,7 @@ MonoBehaviour:
     orbitSpeed: 10
     rotationSpeed: 8
     planetObject: {fileID: 0}
-  - planetPrefab: {fileID: 778310431164122961, guid: 3b3f4068738a6344f989b705c0e51009,
+  - planetPrefab: {fileID: 369804229308634494, guid: 77b4aff44042a5541947c4edecfb2588,
       type: 3}
     orbitDistance: 20
     orbitSpeed: 36.8
@@ -3922,12 +3928,12 @@ PrefabInstance:
     - target: {fileID: 3574495745009024972, guid: 48650121533522a419d904bcf1379521,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -34.17
+      value: -154.8
       objectReference: {fileID: 0}
     - target: {fileID: 3574495745009024972, guid: 48650121533522a419d904bcf1379521,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.7
+      value: -38.9
       objectReference: {fileID: 0}
     - target: {fileID: 3574495745009024972, guid: 48650121533522a419d904bcf1379521,
         type: 3}

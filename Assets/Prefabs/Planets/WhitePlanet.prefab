@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3193031571723178059
+--- !u!1 &2352594464321533101
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4337793536181027318}
-  - component: {fileID: 4789836683858920346}
-  - component: {fileID: 3644374784624659931}
-  - component: {fileID: -364204100585275772}
+  - component: {fileID: 2040014240856599962}
+  - component: {fileID: 5947305084346621590}
+  - component: {fileID: 3153803348627633584}
+  - component: {fileID: -524545285293001810}
   m_Layer: 0
-  m_Name: BurakMeteor
+  m_Name: WhitePlanet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4337793536181027318
+--- !u!4 &2040014240856599962
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3193031571723178059}
+  m_GameObject: {fileID: 2352594464321533101}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071069, y: 0, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: -11.61, y: 8.29, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: -5.9957385, y: 5.173102, z: 1.7192268}
+  m_LocalScale: {x: 250, y: 250, z: 250}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4789836683858920346
+--- !u!33 &5947305084346621590
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3193031571723178059}
-  m_Mesh: {fileID: 8084280450250366902, guid: 8d64c7f74d2ba3346984f876b6f0057d, type: 3}
---- !u!23 &3644374784624659931
+  m_GameObject: {fileID: 2352594464321533101}
+  m_Mesh: {fileID: -1579241630799410176, guid: 134d74bb7967eb54fb070ac4423b5ca7, type: 3}
+--- !u!23 &3153803348627633584
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3193031571723178059}
+  m_GameObject: {fileID: 2352594464321533101}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 7869687896597053748, guid: 8d64c7f74d2ba3346984f876b6f0057d, type: 3}
+  - {fileID: 2100000, guid: 34347ba01346ea1468931197bb97debe, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -84,18 +84,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-364204100585275772
+--- !u!114 &-524545285293001810
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3193031571723178059}
+  m_GameObject: {fileID: 2352594464321533101}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ad9924173b9aba41a9b15f551cded94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMakingBig: 1
+  isMakingBig: 0
   size: 10
   baseGrowthFactor: 0.1

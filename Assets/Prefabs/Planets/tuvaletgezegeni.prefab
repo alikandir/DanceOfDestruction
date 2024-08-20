@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7561020700119846035}
   - component: {fileID: 4271495154045290575}
   - component: {fileID: 971021162990925810}
+  - component: {fileID: -4662119051717650275}
   m_Layer: 0
   m_Name: tuvaletgezegeni
   m_TagString: Untagged
@@ -83,3 +84,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-4662119051717650275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034978271487941932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ad9924173b9aba41a9b15f551cded94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMakingBig: 1
+  size: 10
+  baseGrowthFactor: 0.1
