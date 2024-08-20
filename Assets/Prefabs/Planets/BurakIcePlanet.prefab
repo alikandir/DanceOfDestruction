@@ -118,7 +118,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetSize: 11
   flavorText: 
-  taskText: 
+  taskText: The Earth is feeling cold. Give your loved one a warm hug and destroy
+    that icy planet. (Ice Planet)
 --- !u!114 &-3092964043094266549
 MonoBehaviour:
   m_ObjectHideFlags: 0

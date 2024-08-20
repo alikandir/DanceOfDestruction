@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6090400703096962274}
   - component: {fileID: 7810545989475135846}
   - component: {fileID: -2864980504550978743}
+  - component: {fileID: -5184032913857105811}
   m_Layer: 0
   m_Name: Icosphere.002 1
   m_TagString: Untagged
@@ -124,3 +125,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.016218996
   m_Center: {x: 0.00036208527, y: -0.0008617325, z: 0.006073781}
+--- !u!114 &-5184032913857105811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8026057492768017374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73a3c9d691118f42b0012a5dd2c10db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetSize: 0
+  flavorText: 
+  taskText: Is that loud music even bearable? Silence that planet. (Planet with Headphones)

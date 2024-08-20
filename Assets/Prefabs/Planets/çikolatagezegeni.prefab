@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 187344642852825961}
   - component: {fileID: -5442157870606301158}
   - component: {fileID: 8338604933960308335}
+  - component: {fileID: 8400798589227249043}
   m_Layer: 0
   m_Name: "\xE7ikolatagezegeni"
   m_TagString: Untagged
@@ -122,3 +123,19 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.014917624
   m_Center: {x: -0.0005724579, y: -0.00009980377, z: 0.004644372}
+--- !u!114 &8400798589227249043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3937051424719613523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73a3c9d691118f42b0012a5dd2c10db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetSize: 0
+  flavorText: 
+  taskText: "Let\u2019s have something sweet. Surprise them with a treat. I heard
+    they like chocolate. (Chocolate Planet)"

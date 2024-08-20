@@ -90,6 +90,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 3663954569674898845}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f97753b6ea3625440ac4d4160ad51039,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 463259104763990451}
   m_SourcePrefab: {fileID: 100100000, guid: f97753b6ea3625440ac4d4160ad51039, type: 3}
 --- !u!1 &5426141935059308431 stripped
 GameObject:
@@ -133,3 +137,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.0131399585
   m_Center: {x: -0.001750397, y: -0.0012317703, z: 0.0029134369}
+--- !u!114 &463259104763990451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5426141935059308431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73a3c9d691118f42b0012a5dd2c10db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetSize: 0
+  flavorText: 
+  taskText: 'Your loved one hates carrots. (CarrotPlanet) '
