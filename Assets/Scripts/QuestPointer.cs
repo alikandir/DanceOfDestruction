@@ -22,22 +22,22 @@ public class QuestPointer : MonoBehaviour
         pointerTransform = transform.Find("Pointer").GetComponent<RectTransform>();
         pointerImage = transform.Find("Pointer").GetComponent<Image>();
         taskManager = FindFirstObjectByType<TaskManager>();
+        gameObject.SetActive(false);
+        taskManager.SpawnedTask += PositionFinder;
     }
     private void OnEnable()
     {
-        taskManager.SpawnedTask += PositionFinder;
+       
         taskManager.OnTaskFinished += OnTaskFinished;
     }
 
     private void OnTaskFinished()
     {
         isTarget = false;
+        gameObject.SetActive(false);
     }
 
-    private void OnDisable()
-    {
-        taskManager.SpawnedTask -= PositionFinder;
-    }
+  
 
     // Update is called once per frame
     void Update()
@@ -99,5 +99,7 @@ public class QuestPointer : MonoBehaviour
         isTarget = true;
         target=task;
         targetLocation=task.transform.position;
+        gameObject.SetActive(true);
+        gameObject.GetComponent<Animator>().Play("QuestPointerStart");
     }
 }

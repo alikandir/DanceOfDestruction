@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using DG.Tweening;
 
 
 public class TaskManager : MonoBehaviour
@@ -24,6 +25,13 @@ public class TaskManager : MonoBehaviour
     GameObject spawned;
     public event Action<GameObject> SpawnedTask;
     public event Action OnTaskFinished;
+    public Animator QuestPopAnimator;
+    public AudioClip NewTask;
+    public AudioClip TaskSuccesful;
+    public TextMeshProUGUI activeTaskText;
+    float plSize;
+    float size;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +44,10 @@ public class TaskManager : MonoBehaviour
         rightTopCorner = mainCamera.ViewportToWorldPoint(new Vector3(1, 1, distance));
 
         stars = FindObjectsOfType<SunOrbiter>();
+        taskTextUI.gameObject.SetActive(false);
+        activeTaskText.text = "No Task";
+        
+
     }
     
     
@@ -49,7 +61,12 @@ public class TaskManager : MonoBehaviour
         {
             GiveTask();
             isTaskGiven = true; // Ensure this is set immediately after giving a task
-            
+            QuestPopAnimator.Play("NewTask2");
+            QuestPopAnimator.gameObject.GetComponent<AudioSource>().clip = NewTask;
+            QuestPopAnimator.gameObject.GetComponent<AudioSource>().Play();
+
+
+
         }
         else if (isTaskGiven && taskTimer.TimeOut)
         {
@@ -99,13 +116,13 @@ public class TaskManager : MonoBehaviour
 
     float SizeGenerator()
     {
-        float plSize = player.transform.gameObject.GetComponent<PlayerSizeControl>().size;
-        return plSize * UnityEngine.Random.Range(1.5f, 2f);
+        plSize = player.transform.gameObject.GetComponent<PlayerSizeControl>().size;
+        return plSize * UnityEngine.Random.Range(1.1f, 1.3f);
     }
 
     void GiveTask()
     {
-        float size = SizeGenerator();
+        size = SizeGenerator();
         //Spawn(SupremeTaskSelector(), size, LocationGenerator());
         spawned = stars[UnityEngine.Random.Range(0, stars.Length)].GetComponent<SunOrbiter>().AddPlanet(taskObjectList[SupremeTaskSelector()]);//added
         spawned.GetComponent<TaskObjectsBase>().targetSize = size;
@@ -118,9 +135,12 @@ public class TaskManager : MonoBehaviour
         SpawnedTask?.Invoke(spawned);
         spawned.GetComponent<TaskObjectsBase>().OnTaskComplete += TaskComplete;
         isTaskGiven = true;
+        StartCoroutine(RevealText()) ;
         taskTimer.StartTimer();
-        
-        
+        spawned.transform.GetChild(0).gameObject.SetActive(true);
+        activeTaskText.text = "Active Task";
+
+
     }
 
     public void TaskComplete()
@@ -128,11 +148,34 @@ public class TaskManager : MonoBehaviour
         isTaskGiven = false;
         timer.StartTimer();
         OnTaskFinished.Invoke();
-        
+        QuestPopAnimator.Play("TaskClosed");
+        taskTextUI.gameObject.SetActive(false);
+        QuestPopAnimator.gameObject.GetComponent<AudioSource>().clip = TaskSuccesful;
+        QuestPopAnimator.gameObject.GetComponent<AudioSource>().Play();
+        activeTaskText.text = "No Task";
+
+
     }
 
     public void TaskFailed()
     {
         player.GetComponent<PlayerSizeControl>().GameOverEmit();
+    }
+     IEnumerator ShowTaskText()
+    {
+        yield return new WaitForSeconds(1);
+        taskTextUI.gameObject.SetActive(true);
+        
+    }
+    IEnumerator RevealText()
+    {
+        taskTextUI.gameObject.SetActive(true);
+        taskTextUI.text = "";
+        string fullText = spawned.GetComponent<TaskObjectsBase>().taskText + size;
+        foreach (char c in fullText)
+        {
+            taskTextUI.text += c;
+            yield return new WaitForSeconds(0.03f);
+        }
     }
 }

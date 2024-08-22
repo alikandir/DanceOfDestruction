@@ -9,6 +9,7 @@ public class YearTimer : MonoBehaviour
     public float timeMultiplier = 0.1f;           // Controls how fast the timer increments
     private float elapsedYears = 0f;      // Starting at 2 million years
     public Vector3 popUpOffSet;
+    public float popUpAppearTime;
     Vector3 popUpPos;
     public TextMeshProUGUI popUpText;
     public float firstEventYear;
@@ -138,15 +139,16 @@ public class YearTimer : MonoBehaviour
     void ShowPopUpText()
     {
         popUpText.gameObject.SetActive(true);
+        popUpText.gameObject.GetComponent<AudioSource>().Play();
         
 
-        popUpText.gameObject.transform.DOMove(popUpPos + popUpOffSet, 5);
+        popUpText.gameObject.transform.DOMove(popUpPos + popUpOffSet, popUpAppearTime);
         
         StartCoroutine(HidePopUpText());
     }
     IEnumerator HidePopUpText()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(popUpAppearTime);
         popUpText.gameObject.SetActive(false);
         popUpText.gameObject.transform.DOMove(popUpPos, 1);
     }

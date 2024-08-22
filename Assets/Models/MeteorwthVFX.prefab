@@ -83,6 +83,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeteorwthVFX
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dbf601f047dee514a932dbe9ca787e82,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -221,7 +226,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 8
   m_CollisionDetection: 0
 --- !u!135 &-7576838374351530514
 SphereCollider:

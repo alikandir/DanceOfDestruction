@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using DG.Tweening;
+using System;
 
 
 public class CameraAdjust : MonoBehaviour
@@ -14,13 +15,26 @@ public class CameraAdjust : MonoBehaviour
     public CinemachineVirtualCamera cinemachineCam;
     private Vector3 _followOffset;
     private PlayerMovement playerMovement;
-    private float cameraChangeAdjuster= 1.3f;
+    public float cameraChangeAdjuster = 1.3f;
+    public float cameraChangeMultiplier;
+    public Vector3[] cameraOffSets;
+    public float[] playerSpeeds;
+    public float[] projectileSpeeds;
+    int currentIndex = -1;
+    float currentRate;
+    Vector3 targetOffset;
+    Vector3 startOffset;
+    float desiredDuration = 6f;
+    float elapsedTime = 0f;
+    private int lastIndex = 0;
     private void Awake()
     {
         playerMovement = GetComponent<PlayerMovement>();
-        playerSizeControl=gameObject.GetComponent<PlayerSizeControl>();
-        _playerSizeThreshhold = this.gameObject.transform.localScale.x*1.5f;
+        playerSizeControl = gameObject.GetComponent<PlayerSizeControl>();
+        _playerSizeThreshhold = this.gameObject.transform.localScale.x * 1.5f;
         _followOffset = cinemachineCam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset;
+        startOffset = new Vector3(0,0,-15);
+        targetOffset= cameraOffSets[0];
     }
 
     private void OnEnable()
@@ -32,25 +46,43 @@ public class CameraAdjust : MonoBehaviour
     {
         playerSizeControl.OnEat -= HandleBlackHoleGrowth;
     }
-    void HandleBlackHoleGrowth(float playerSize)
+    void HandleBlackHoleGrowth(float playerSize, float maxSize)
     {
-        if ( this.gameObject.transform.localScale.x> _playerSizeThreshhold * cameraChangeAdjuster)
+        currentRate = playerSize / maxSize;
+    }
+    private void Update()
+    {
+
+        int newIndex = GetIndexForRate(currentRate);
+        elapsedTime += Time.deltaTime;
+        
+
+        if (newIndex != lastIndex)
         {
-            spawner.projectileSpeed *= 2; //i am speed
-            playerMovement.moveSpeed *= 2; //we are speed
-            DOTween.To(() => cinemachineCam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset, x => cinemachineCam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset = x,_followOffset*2, 3);
-            _followOffset *= 2;
-            _playerSizeThreshhold = this.gameObject.transform.localScale.x;
-        }
-        else if (this.gameObject.transform.localScale.x < _playerSizeThreshhold / cameraChangeAdjuster)
-        {
-            spawner.projectileSpeed /= 2; //i am sped
-            playerMovement.moveSpeed /= 2; //we are sped
-            DOTween.To(() => cinemachineCam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset, x => cinemachineCam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset = x, _followOffset/2, 3);
-            _followOffset /= 2;
-            _playerSizeThreshhold = this.gameObject.transform.localScale.x;
+            // Update only if the index has changed
+            currentIndex = newIndex;
+            lastIndex = newIndex;
+            elapsedTime = 0;
+            targetOffset = cameraOffSets[currentIndex];
+            spawner.projectileSpeed = projectileSpeeds[currentIndex];
+            playerMovement.moveSpeed = playerSpeeds[currentIndex];
+            //startOffset = cinemachineCam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset;
+            
 
         }
+        float percentageComplete = elapsedTime / desiredDuration;
+        if (elapsedTime <= desiredDuration) 
+        { cinemachineCam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset = Vector3.Lerp(cinemachineCam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset, targetOffset, Mathf.SmoothStep(0, 1, percentageComplete)); }
+        
+
     }
-    
+    int GetIndexForRate(float rate)
+    {
+        Debug.Log(rate);
+        if (rate >= 0.80f) return 4;
+        if (rate > 0.60f) return 3;
+        if (rate >= 0.40f) return 2;
+        if (rate > 0.20f) return 1;
+        return 0;
+    }
 }
