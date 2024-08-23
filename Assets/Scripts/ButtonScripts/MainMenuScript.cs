@@ -9,6 +9,7 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField] GameObject mainMenu;
     [SerializeField] GameObject credits;
     [SerializeField] GameObject howtoplay;
+    public GameObject title;
     public void PlayButton()
     {
         SceneManager.LoadScene("IntroScene");
@@ -17,6 +18,7 @@ public class MainMenuScript : MonoBehaviour
 
     public void BackButton()
     {
+        title.gameObject.SetActive(true);
         current.SetActive(false);
         mainMenu.SetActive(true);
         current = null;
@@ -32,6 +34,7 @@ public class MainMenuScript : MonoBehaviour
 
     public void HowToPlay()
     {
+        title.gameObject.SetActive(false);
         howtoplay.SetActive(true);
         mainMenu.SetActive(false);
         current = howtoplay;
