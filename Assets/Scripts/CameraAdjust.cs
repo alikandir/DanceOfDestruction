@@ -78,7 +78,7 @@ public class CameraAdjust : MonoBehaviour
     }
     int GetIndexForRate(float rate)
     {
-        Debug.Log(rate);
+        
         if (rate >= 0.80f) return 4;
         if (rate > 0.60f) return 3;
         if (rate >= 0.40f) return 2;

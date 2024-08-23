@@ -76,7 +76,7 @@ public class ProjectileSpawner : MonoBehaviour
     }
     void SpawnWhiteHole(float size = 10f)
     {
-        GameObject spawned = Instantiate(whitePlanet, WhiteHoleLocationGenerator(), Quaternion.identity);
+        GameObject spawned = Instantiate(whitePlanet, WhiteHoleLocationGenerator(), Quaternion.Euler(90,0,0));
         spawned.GetComponent<Edibles>().size = size;
         
     }
@@ -100,7 +100,7 @@ public class ProjectileSpawner : MonoBehaviour
             yield return new WaitForSeconds(whiteHoleSpawnCooldown);
 
             playerSize = player.gameObject.GetComponent<PlayerSizeControl>().size;
-            float spawnSize = SizeGenerator();
+            float spawnSize = SizeGeneratorWhiteHole();
             SpawnWhiteHole(spawnSize);
             
         }
@@ -115,5 +115,10 @@ public class ProjectileSpawner : MonoBehaviour
             return Random.Range(playerSize / 8, playerSize / 6);
         else
             return Random.Range(playerSize / 20, playerSize / 8);
+    }
+    float SizeGeneratorWhiteHole()
+    {
+        int rand = Random.Range(0, 100);
+        return playerSize * 2 / 3;
     }
 }

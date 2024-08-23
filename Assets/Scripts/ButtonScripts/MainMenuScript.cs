@@ -11,7 +11,7 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField] GameObject howtoplay;
     public void PlayButton()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("IntroScene");
     }
 
 
@@ -40,6 +40,6 @@ public class MainMenuScript : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
-        Debug.Log("exit");
+        
     }
 }

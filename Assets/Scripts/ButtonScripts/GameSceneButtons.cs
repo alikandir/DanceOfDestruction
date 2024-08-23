@@ -8,13 +8,13 @@ public class GameSceneButtons : MonoBehaviour
     bool isGamePaused = false;
     public void Restart()
     {
-        Debug.Log("basildi");
+        
         SceneManager.LoadScene("MainScene");
     }
 
     public void Pause()
     {
-        Debug.Log("basildi");
+        
         if (isGamePaused)
         {
             isGamePaused = false;
@@ -32,7 +32,7 @@ public class GameSceneButtons : MonoBehaviour
 
     public void ExitButton()
     {
-        Debug.Log("basildi");
+       
         SceneManager.LoadScene("MainMenu");
     }
 }

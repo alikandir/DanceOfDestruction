@@ -717,7 +717,8 @@ MonoBehaviour:
     COMPLETING THE TASKS, THE BAR ON THE RIGHT IS THERE TO HELP YOU.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e74a35d8c0460634baea13a89f691f25, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -22835189501028507, guid: e74a35d8c0460634baea13a89f691f25,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

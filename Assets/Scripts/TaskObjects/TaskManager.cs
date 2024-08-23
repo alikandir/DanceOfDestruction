@@ -31,6 +31,9 @@ public class TaskManager : MonoBehaviour
     public TextMeshProUGUI activeTaskText;
     float plSize;
     float size;
+    public TextMeshProUGUI timeLeftText;
+
+    float timeLeftCount;
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +49,7 @@ public class TaskManager : MonoBehaviour
         stars = FindObjectsOfType<SunOrbiter>();
         taskTextUI.gameObject.SetActive(false);
         activeTaskText.text = "No Task";
+        timeLeftCount=secondsToTask;
         
 
     }
@@ -60,6 +64,7 @@ public class TaskManager : MonoBehaviour
         if (timer.TimeOut && !isTaskGiven)
         {
             GiveTask();
+            
             isTaskGiven = true; // Ensure this is set immediately after giving a task
             QuestPopAnimator.Play("NewTask2");
             QuestPopAnimator.gameObject.GetComponent<AudioSource>().clip = NewTask;
@@ -72,9 +77,22 @@ public class TaskManager : MonoBehaviour
         {
             TaskFailed();
         }
+        ShowCountDown();
     }
 
-    int SupremeTaskSelector()
+    public void ShowCountDown()
+    {
+        timeLeftCount-=Time.deltaTime;
+        if ( isTaskGiven)
+        {
+            timeLeftText.text = "Time Left\n" + timeLeftCount.ToString("0.0");
+        }
+        else
+            timeLeftText.text = "Time to Next Task\n" + timeLeftCount.ToString("0.0");
+
+    }
+
+        int SupremeTaskSelector()
     {
         if (taskObjectList.Length > 0)
         {
@@ -122,6 +140,7 @@ public class TaskManager : MonoBehaviour
 
     void GiveTask()
     {
+        timeLeftCount = taskTime;
         size = SizeGenerator();
         //Spawn(SupremeTaskSelector(), size, LocationGenerator());
         spawned = stars[UnityEngine.Random.Range(0, stars.Length)].GetComponent<SunOrbiter>().AddPlanet(taskObjectList[SupremeTaskSelector()]);//added
@@ -145,6 +164,7 @@ public class TaskManager : MonoBehaviour
 
     public void TaskComplete()
     {
+        timeLeftCount = secondsToTask;
         isTaskGiven = false;
         timer.StartTimer();
         OnTaskFinished.Invoke();
@@ -171,7 +191,7 @@ public class TaskManager : MonoBehaviour
     {
         taskTextUI.gameObject.SetActive(true);
         taskTextUI.text = "";
-        string fullText = spawned.GetComponent<TaskObjectsBase>().taskText + size;
+        string fullText = spawned.GetComponent<TaskObjectsBase>().taskText + "\nTarget Size:"+size.ToString("0.0");
         foreach (char c in fullText)
         {
             taskTextUI.text += c;
